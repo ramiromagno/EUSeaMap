@@ -1,11 +1,11 @@
 #' List map files in archives
 #'
-#' `ls_map_files()` lists the map files contained within archives.
+#' `ls_map_files()` lists the map files contained within zip archives.
 #'
 #' This function loops over all archives in `path` whose file name matches the
-#' `pattern` and lists files within each archive.
+#' `pattern` and lists files within each zip archive.
 #'
-#' @param path A path to a directory containing archives with map files.
+#' @param path A path to a directory containing zip archives with map files.
 #' @param pattern A pattern to filter archive file names.
 #' @param exclusions A character vector of file names not to be included in the
 #' listing.
@@ -28,6 +28,9 @@ ls_map_files <- function(path, pattern = "+\\.zip$", exclusions = "EMODnetSBH_Co
 
   # `ar`: Archive file names (zip files)
   ar <- list.files(path = path, pattern = pattern)
+
+  if (length(ar) == 0L)
+    stop("The directory ", path, " does not contain any archive zip files.")
 
   # `ar_path`: Archive files (zip files)
   ar_path <- file.path(path, ar)

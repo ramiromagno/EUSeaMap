@@ -11,7 +11,7 @@ ls_map_files(
 )
 }
 \arguments{
-\item{path}{A path to a directory containing archives with map files.}
+\item{path}{A path to a directory containing zip archives with map files.}
 
 \item{pattern}{A pattern to filter archive file names.}
 
@@ -32,9 +32,9 @@ the map files contained in the archives, one row per \code{file}:
 }
 }
 \description{
-\code{ls_map_files()} lists the map files contained within archives.
+\code{ls_map_files()} lists the map files contained within zip archives.
 }
 \details{
 This function loops over all archives in \code{path} whose file name matches the
-\code{pattern} and lists files within each archive.
+\code{pattern} and lists files within each zip archive.
 }
