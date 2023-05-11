@@ -41,8 +41,8 @@ ls_map_files <- function(path, pattern = "+\\.zip$", exclusions = "EMODnetSBH_Co
                .f = \(x) utils::unzip(zipfile = x, list = TRUE)) |>
     purrr::list_rbind(names_to = "archive_id") |>
     dplyr::transmute(
-      ar_path = .data$ar_path[.data$archive_id],
-      ar = .data$ar[.data$archive_id],
+      ar_path = ar_path[.data$archive_id],
+      ar = ar[.data$archive_id],
       file = .data$Name,
       size = .data$Length,
       date = .data$Date
