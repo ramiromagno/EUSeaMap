@@ -1,0 +1,40 @@
+---
+title: "EUSeaMap Phase 5 (2021-2023) raw data set sources"
+sources:
+  - {
+    file: "EMODnetSBH_EUNIS_surveymaps.zip",
+    desc: "EUNIS maps",
+    cs: "EUNIS",
+    url: "https://files.emodnet-seabedhabitats.eu/data/EMODnetSBH_EUNIS_surveymaps.zip"
+  }
+  - {
+    file: "EMODnetSBH_HabitatsDirective_surveymaps.zip",
+    desc: "Annex I maps",
+    cs: "HabitatsDirective",
+    url: "https://files.emodnet-seabedhabitats.eu/data/EMODnetSBH_HabitatsDirective_surveymaps.zip"
+  }
+  - {
+    file: "EMODnetSBH_Other_surveymaps.zip",
+    desc: "Other maps",
+    cs: "",
+    url: "https://files.emodnet-seabedhabitats.eu/data/EMODnetSBH_Other_surveymaps.zip"
+  }
+  - {
+    file: "26d27369-b218-4fcc-84a4-7f2cd5583154-GB001222.zip",
+    desc: "Broadscale habitat (EUNIS level 3) for Markham's Triangle recommended Marine Conservation Zone (rMCZ)",
+    cs: "EUNIS",
+    url: "https://data.jncc.gov.uk/data/26d27369-b218-4fcc-84a4-7f2cd5583154-GB001222.zip"
+  }
+  - {
+    file: "eov_seagrasscover.zip",
+    desc: "Seagrass cover in Europe (v2021, draft)",
+    cs: "",
+    url: "https://files.emodnet-seabedhabitats.eu/data/eov_seagrasscover.zip"
+  }
+  - {
+    file: "ospar2020_poly.zip",
+    desc: "OSPAR threatened and/or declining habitats in the NE Atlantic (v2020) - official reference data product",
+    cs: "",
+    url: "https://files.emodnet-seabedhabitats.eu/data/ospar2020_poly.zip"
+  }
+---

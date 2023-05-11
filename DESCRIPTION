@@ -1,0 +1,42 @@
+Package: EUSeaMap
+Type: Package
+Title: EMODnet Broad-Scale Seabed Habitat Map for Europe
+Version: 0.1.0
+Authors@R: c(
+    person(given = "Ramiro", family = "Magno", email = "rmagno@pattern.institute",
+    role = c("aut", "cre"), comment = c(ORCID = "0000-0001-5226-3441")),
+    person(given = "Pedro", family = "Monteiro", email = "pmontei@ualg.pt",
+    role = "aut", comment = c(ORCID = "0000-0003-1446-8256")),
+    person(given = "Ramiro", family = "Magno", email = "lbentes@ualg.pt",
+    role = "aut", comment = c(ORCID = "0000-0001-6884-2886")),
+    person("Pattern Institute",
+    role = c("cph", "fnd"))
+    )
+Description: The EMODnet broad-scale seabed habitat map for Europe is a
+    comprehensive, free and ready-to-use broad-scale map of physical habitats,
+    harmonising mapping procedures and fostering a common  understanding among
+    seabed mappers in Europe. The map is also known as EUSeaMap. This package
+    provides a suite of utilities to generate the EUSeaMap.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+Roxygen: list(markdown = TRUE)
+Imports: 
+    curl,
+    dplyr,
+    eunis.habitats (>= 0.1.0),
+    foreign,
+    fs,
+    httr,
+    magrittr,
+    purrr,
+    readr,
+    rlang,
+    stringr,
+    tibble,
+    yaml
+Depends: 
+    R (>= 2.10)
+Remotes: 
+    ramiromagno/eunis.habitats
