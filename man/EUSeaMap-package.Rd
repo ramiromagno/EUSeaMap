@@ -14,12 +14,13 @@ The EMODnet broad-scale seabed habitat map for Europe is a comprehensive, free a
 Authors:
 \itemize{
   \item Pedro Monteiro \email{pmontei@ualg.pt} (\href{https://orcid.org/0000-0003-1446-8256}{ORCID})
-  \item Ramiro Magno \email{lbentes@ualg.pt} (\href{https://orcid.org/0000-0001-6884-2886}{ORCID})
+  \item Luís Bentes \email{lbentes@ualg.pt} (\href{https://orcid.org/0000-0001-6884-2886}{ORCID})
 }
 
 Other contributors:
 \itemize{
   \item Pattern Institute [copyright holder, funder]
+  \item CCMAR [copyright holder, funder]
 }
 
 }

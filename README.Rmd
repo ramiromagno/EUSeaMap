@@ -32,32 +32,48 @@ You can install the development version of EUSeaMap like so:
 remotes::install_github("ramiromagno/EUSeaMap")
 ```
 
-## Example (very much still work in progress)
+## Usage
+
+Pedro and Luís, please test these functions and give me feedback! :)
 
 ``` r
 library(EUSeaMap)
+library(tidyverse)
 
-# Set download path
+# Set a download path of your liking
 path <- "~/Downloads/EUSeaMap_Data/"
 
-# Download sources
+# read_sources(): reads a table of data sources.
+# look at https://github.com/ramiromagno/EUSeaMap/blob/main/inst/EUSeaMap_phase5_rawdata.yml
+read_sources()
+
+# For downloading raw data from sources
 download_sources(path = path)
 
-# Create MANIFEST file
-manifest <- create_manifest(path = path)
+# create_manifest(): for generating MD5 checksums (to control version of downloaded files)
+create_manifest()
 write_csv(x = manifest, file = file.path(path, "MANIFEST"))
 
-# Data source map files
+#  ls_map_files(): for listing map-related files without uncompressing the zip archives
 map_files <- ls_map_files(path = path)
 
-
+# For a quick summary of the available files
 count(map_files, file_type)
 count(map_files, gui)
 
-
-zip_file <- "~/dwl/multi_download/EMODnetSBH_EUNIS_surveymaps.zip"
+# Read map layers' attributes of two example files
+zip_file1 <- file.path(path, "EMODnetSBH_EUNIS_surveymaps.zip")
 read_dbf("BE000142.dbf", zip_file)
-zip_file <- "~/dwl/multi_download/EMODnetSBH_Other_surveymaps.zip"
+
+zip_file2 <- file.path(path, "EMODnetSBH_Other_surveymaps.zip")
 read_dbf("IE003090.dbf", zip_file)
+
+# eunis_biogenic_habitats(): EUNIS biogenic habitats following the criteria indicated in Section 2.1 of the EMODnet Seabed Habitats Data Product (2019)
+eunis_biogenic_habitats()
+
+# biogenic_substrates(): biogenic substrates as defined in Table 5 of the EMODnet Seabed Habitats Data Product (2019).
+biogenic_substrates
+
 ```
+
 
