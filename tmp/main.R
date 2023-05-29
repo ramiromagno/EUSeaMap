@@ -26,17 +26,18 @@ count(map_files, file_type)
 # How many files per map (i.e. GUI)?
 count(map_files, gui)
 
-# Read map layers' attributes of two example files
-zip_file1 <- file.path(path, "EMODnetSBH_EUNIS_surveymaps.zip")
-read_dbf("BE000142.dbf", zip_file1)
+foo <- read_dbf(dbf_file = dbf_files_small$file, ar = dbf_files_small$ar_path)
+foo <- read_dbf(dbf_file = dbf_files$file, ar = dbf_files$ar_path)
 
-zip_file2 <- file.path(path, "EMODnetSBH_Other_surveymaps.zip")
-read_dbf("IE003090.dbf", zip_file2)
+dplyr::distinct(foo, gui, polygon)
+foo |>
+  select(c("gui", "polygon")) %>%
+  filter(duplicated(.)) |>
+  pull(gui) |>
+  unique()
 
-# eunis_biogenic_habitats(): EUNIS biogenic habitats following the criteria
-# indicated in Section 2.1 of the EMODnet Seabed Habitats Data Product (2019)
-eunis_biogenic_habitats()
+"GB003021" "GB001494" "ES000001" "FR003016" "IT004009" "FR004036" "FR003076" "IE000009" "IT003001" "FR003028" "GB001104" "IE001005"
 
-# biogenic_substrates(): biogenic substrates as defined in Table 5 of the
-# EMODnet Seabed Habitats Data Product (2019).
-biogenic_substrates
+bar <-
+  foo |>
+  filter(gui == "GB003021")
